@@ -1,0 +1,28 @@
+CREATE TABLE dreamland (id INTEGER PRIMARY KEY, name TEXT, genre TEXT, console TEXT, quantity INTEGER, price REAL);
+
+INSERT INTO
+dreamland
+
+VALUES
+(1, "Bayonetta 3", "Action", "Switch", 5, 59.99),
+(2, "Final Fantasy XIV", "MMORPG", "PS5", 10, 39.99),
+(3, "Chrono Cross", "RPG", "PSX", 16, 39.99),
+(4, "Super Mario 64", "Platformer", "N64", 22, 49.99),
+(5, "Goldeneye 007", "FPS", "N64", 10, 49.99),
+(6, "Pokemon Gold", "RPG", "GB", 26, 25.99),
+(7, "Pokemon Silver", "RPG", "GB", 30, 25.99),
+(8, "Chrono Trigger", "RPG", "SNES", 15, 59.99),
+(9, "The Legend of Zelda a Link to the Past", "RPG","SNES",10,59.99),
+(10, "Persona 3", "RPG", "PS2", 10, 49.99),
+(11, "Final Fantasy VI", "RPG", "SNES", 7, 59.99),
+(12, "Street Fighter V", "Fighting", "PS4", 20, 49.99),
+(13, "Xenoblade Chronicles", "RPG", "Switch", 10, 49.99),
+(14, "Resident Evil 2", "Survival", "GC", 10, 49.99),
+(15, "God of War Ragnarok", "Action", "PS5", 30, 69.99);
+
+--what is the total number of copies of games in the store?
+SELECT SUM(quantity) FROM dreamland;
+
+--display the database order by quantity.
+SELECT * FROM dreamland WHERE quantity >=5
+ORDER BY quantity asc;
