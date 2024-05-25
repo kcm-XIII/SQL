@@ -39,14 +39,14 @@ ORDER BY price;
 SELECT SUM (price)
 FROM superstore;
 
--- 3. Show the price of each item from the kicthen supply category and display price in descending order
+-- 3. Show the price of each item from the kicthen supply category and display prices highest to low
 
 SELECT item_name, 'Kitchen Supplies', price
 FROM superstore
 WHERE category="Kitchen Supplies"
 ORDER BY price DESC;
 
--- 4. Which items under the furnishings category has the highest average rating in descending order?
+-- 4. Which items under the furnishings category has the highest average rating? Organize results by highest to low.
 
 SELECT item_name, "Furnishings", average_rating
 FROM superstore
