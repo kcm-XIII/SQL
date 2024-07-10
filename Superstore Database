@@ -39,7 +39,7 @@ ORDER BY price;
 SELECT SUM (price)
 FROM superstore;
 
--- 3. Show the price of each item from the kicthen supply category and display prices highest to low
+-- 3. Show the price of each item from the kitchen supply category and display prices highest to low
 
 SELECT item_name, 'Kitchen Supplies', price
 FROM superstore
