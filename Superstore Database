@@ -29,26 +29,25 @@ VALUES
 
 #This project uses SQL to query the Superstore database to obtain information about the items purchased at the store and their prices.
 
--- 1. Use a SELECT statement to order the items by price.
+-- 1) This query will order items by price
 
 SELECT item_name, price
 FROM superstore
 ORDER BY price;
 
--- 2. Show a statistic about the item prices.
-SELECT SUM (price)
+-- 2) This query shows the most expensive item within the superstore table using the MAX aggregate function
+
+SELECT item_id, item_name, category, price
+FROM superstore
+WHERE price= (SELECT MAX(price) FROM superstore );
+
+-- 3) This query displays how many items within the Kitchen Supplies category has a higher price than $50.00 using the COUNT aggregate function
+
+SELECT 'Kitchen Supplies', COUNT(price) AS NumberOfItems
+FROM superstore
+WHERE category='Kitchen Supplies' AND price > 50.00;
+
+-- 4) This query shows the average price of all items within the Appliances category
+
+SELECT 'Appliances', AVG(price) AS AveragePrice
 FROM superstore;
-
--- 3. Show the price of each item from the kitchen supply category and display prices highest to low
-
-SELECT item_name, 'Kitchen Supplies', price
-FROM superstore
-WHERE category="Kitchen Supplies"
-ORDER BY price DESC;
-
--- 4. Which items under the furnishings category has the highest average rating? Organize results by highest to low.
-
-SELECT item_name, "Furnishings", average_rating
-FROM superstore
-WHERE category="Furnishings"
-ORDER BY average_rating DESC;
