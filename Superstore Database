@@ -29,17 +29,21 @@ VALUES
 
 #This project uses SQL to query the Superstore database to obtain information about the items purchased at the store and their prices.
 
--- 1) This query will order items by price
+-- 1) This query will order items by price.
 
 SELECT item_name, price
 FROM superstore
 ORDER BY price;
 
--- 2) This query shows the most expensive item within the superstore table using the MAX aggregate function
+-- 2) This query shows the most expensive item within the superstore table using the MAX function.
 
 SELECT item_id, item_name, category, price
 FROM superstore
 WHERE price= (SELECT MAX(price) FROM superstore );
+
+SELECT MIN(price), item_name
+FROM superstore
+;
 
 -- 3) This query displays how many items within the Kitchen Supplies category has a higher price than $50.00 using the COUNT aggregate function
 
